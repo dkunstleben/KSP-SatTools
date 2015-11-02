@@ -1,0 +1,73 @@
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+label{
+	display: block;
+}
+
+.calc-container{
+	margin: 10px auto;
+	border: 1px solid black;
+	width: 45em;
+}
+
+.form-container{
+	height: 7em;
+}
+
+form, .form-left, .form-right{
+	height: 100%;
+}
+
+.form-left{
+	width: 80%;
+	float: left;
+	background-color: #EEEEFF;	
+}
+
+.form-right{
+	width: 20%;
+	float: left;
+	background-color: #FFEEEE;
+}
+
+.range{
+	width: 50%;
+	float: left;
+}
+
+.body-soi{
+	width: 100%;
+	background-color:#EFEFEF;
+}
+
+.form-right-top{
+	height:70%;
+}
+
+.form-right-bottom{
+	height:30%;
+}
+
+table{
+
+	border-collapse: collapse;
+}
+
+table, tr{
+	width: 100%;
+}
+
+th, td{
+	width: 25%;
+	border: 1px solid black;
+}
