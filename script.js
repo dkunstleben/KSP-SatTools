@@ -49,7 +49,7 @@ $(function(){
 				end = Number(formInput['rangeHigh'].value);				
 			}
 			else{
-				end = start + inc;
+				end = start; // loop once
 			}
 			
 			// Execute the loop, perform calculations and build the table structure			
@@ -63,17 +63,6 @@ $(function(){
 				var temp = rowFactory([i,T,Tdark,Ereq]);
 				otpt.push(temp);
 			}
-			
-			// Adds a final entry if the loop doesn't hit the max range value
-			if((end - i) % inc !== 0){
-				var T = calcPeriod(thisPlanet['bodyRadius'], end, (thisPlanet['stdGravParam']));
-				var Tdark = calcDarkPeriod(thisPlanet['bodyRadius'], end, T);
-				var Ereq = calcEreq(Tdark, eReq) || 'N/A';
-
-				var temp = rowFactory([end,T,Tdark,Ereq]);
-				otpt.push(temp);
-			}
-			
 			
 			$kspData.empty();
 			$kspData.append(otpt); // Insert calculations into the DOM
@@ -94,14 +83,8 @@ $(function(){
 			
 			for(var j = 0; j < n; j++)
 			{
-				if(typeof params[j] === 'number'){
-					otpt.append($("<td />",
-						{ text: params[j].toFixed(2)} ) );	
-				}
-				else{
-					otpt.append($("<td />",
-						{ text: params[j] } ) );			
-				}	
+				otpt.append($("<td />", { text: params[j].toFixed(2)}));	
+	
 			}
 			return otpt;
 		}

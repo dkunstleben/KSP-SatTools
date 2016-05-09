@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>KSP Power Decay Calculator</title>
+
+<link href="style.css" rel="stylesheet">
+
+<script src="jquery.js"></script>
+<script src="script.js"></script>
+</head>
+<body>
+<section class="calc-container">
+	<div class="form-container">
+		<form class="ksp-form clearfix">
+			<div class="form-left">
+				<div class="body-soi">
+					<label>Body: <select class="planets" name="planets"></select></label>
+					<div>SOI(km) : <span class="body-range"></span></div>
+				</div>
+				<div class="range range-min">
+					<label>Altitude(km): <input type="text" name="rangeLow" tabindex="1" /></label>
+					<label>Ereq (Chg/s): <input type="text" name="eRate" tabindex="3" /></label>
+				</div>
+				<div class="range range-max">
+					<label> - <input type="text" name="rangeHigh" class="rangeHigh" tabindex="2" /> (Optional)</label>
+					<label>Interval: <input type="text" name="interval" tabindex="4" value="1" />(km)</label>
+				</div>
+			</div>
+			<div class="form-right">
+				<div class="form-right-top">
+					KSP SatTools
+				</div>
+				<div class="form-right-bottom">
+					<input type="submit" value="Calc" tabindex="5" />
+				</div>
+			</div>
+		</form>
+	</div>
+	<table class="calc-table">
+		<thead>
+			<th>Altitude(km)</th><th>T(s)</th><th>T_dark(s)</th><th>Ereq(Chg)</th>
+		</thead>
+		<tbody class="ksp-data">
+			
+		</tbody>
+	</table>
+</section>
+	
+</body>
+</html>
